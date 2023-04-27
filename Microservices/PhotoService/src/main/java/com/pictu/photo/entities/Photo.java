@@ -22,4 +22,7 @@ public class Photo {
     private String location;
     private String about;
 
+    //To be changed later
+
+
 }
