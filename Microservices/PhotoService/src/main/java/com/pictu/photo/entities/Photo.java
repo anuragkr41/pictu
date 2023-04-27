@@ -23,7 +23,7 @@ public class Photo {
     private String about;
 
     //To be changed later
-    //Try again //as //another
+    //Try again //as //another //another
 
 
 }
