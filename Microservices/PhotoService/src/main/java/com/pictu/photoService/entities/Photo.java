@@ -1,4 +1,4 @@
-package com.pictu.photo.entities;
+package com.pictu.photoService.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

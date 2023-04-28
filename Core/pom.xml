@@ -8,11 +8,11 @@
         <version>2.7.11</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.pictu.iam</groupId>
-    <artifactId>iamService</artifactId>
+    <groupId>com.pictu</groupId>
+    <artifactId>Core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>iamService</name>
-    <description>Springboot project to create the IAM service for identity and authentication management</description>
+    <name>Core</name>
+    <description>This is the project we are going to use for our core dependencies</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -25,28 +25,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web-services</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
-
         <dependency>
-            <groupId>com.pictu</groupId>
-            <artifactId>Core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <systemPath>/home/anurag/IdeaProjects/Pictu/Core/target/Core-0.0.1-SNAPSHOT.jar</systemPath>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
