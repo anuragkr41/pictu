@@ -1,6 +1,6 @@
 package com.pictu.iam.iamService.controllers;
 
-import com.pictu.iam.iamService.entities.Customer;
+import com.pictu.iam.iamService.entities.users.Customer;
 import com.pictu.iam.iamService.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

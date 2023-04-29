@@ -21,6 +21,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.pictu</groupId>
+			<artifactId>Core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<systemPath>/home/anurag/IdeaProjects/Pictu/Core/target/Core-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

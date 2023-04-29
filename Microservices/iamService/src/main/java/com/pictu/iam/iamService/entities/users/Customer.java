@@ -1,6 +1,7 @@
-package com.pictu.iam.iamService.entities;
+package com.pictu.iam.iamService.entities.users;
 
 import com.pictu.core.payloads.AuditableEntity;
+import com.pictu.iam.iamService.entities.Photo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

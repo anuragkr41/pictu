@@ -18,6 +18,7 @@ import javax.persistence.Table;
 public class Photo {
     @Id
     private String photoId;
+    private String customerId;
     private String name;
     private String location;
     private String about;

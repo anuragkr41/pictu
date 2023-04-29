@@ -1,6 +1,6 @@
 package com.pictu.iam.iamService.services;
 
-import com.pictu.iam.iamService.entities.Customer;
+import com.pictu.iam.iamService.entities.users.Customer;
 
 import java.util.List;
 

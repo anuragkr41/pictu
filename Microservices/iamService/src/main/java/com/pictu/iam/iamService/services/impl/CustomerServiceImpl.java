@@ -1,7 +1,7 @@
 package com.pictu.iam.iamService.services.impl;
 
-import com.pictu.iam.iamService.entities.Customer;
-import com.pictu.iam.iamService.exceptions.ResourceNotFoundException;
+import com.pictu.core.exceptions.ResourceNotFoundException;
+import com.pictu.iam.iamService.entities.users.Customer;
 import com.pictu.iam.iamService.repositories.CustomerRepository;
 import com.pictu.iam.iamService.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,3 +36,4 @@ public class CustomerServiceImpl implements CustomerService {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + customerId));
     }
 }
+

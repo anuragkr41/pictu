@@ -12,8 +12,8 @@ import lombok.Setter;
 public class Photo {
     private String photoId;
     private String CustomerId;
-    private String PhotographerId;
     private String name;
+    private String location;
 
 
 }
