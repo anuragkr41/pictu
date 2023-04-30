@@ -1,5 +1,6 @@
 package com.pictu.photoService.entities;
 
+import com.pictu.core.payloads.AuditableEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,10 +16,10 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Entity
 @Table
-public class Photo {
+public class Photo extends AuditableEntity {
     @Id
     private String photoId;
-    private String customerId;
+    private String userId;
     private String name;
     private String location;
     private String about;

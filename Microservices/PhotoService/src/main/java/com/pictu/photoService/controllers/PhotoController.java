@@ -1,6 +1,5 @@
 package com.pictu.photoService.controllers;
 
-import com.pictu.core.payloads.ApiResponse;
 import com.pictu.photoService.entities.Photo;
 import com.pictu.photoService.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +27,8 @@ public class PhotoController {
         return ResponseEntity.ok(photoService.getAllPhotos());
     }
 
-    @GetMapping("/customer/{customerId}")
-    public ResponseEntity<List<Photo>> getAllPhotosByCustomerId(@PathVariable String customerId){
-        return ResponseEntity.ok(photoService.getPhotosByCustomerId(customerId));
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Photo>> getAllPhotosByUserId(@PathVariable String userId){
+        return ResponseEntity.ok(photoService.getPhotosByUserId(userId));
     }
 }

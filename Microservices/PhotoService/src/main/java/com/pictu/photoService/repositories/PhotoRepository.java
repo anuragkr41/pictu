@@ -9,8 +9,8 @@ import java.util.List;
 @Repository
 public interface PhotoRepository extends JpaRepository<Photo, String> {
 
-    // Custom Finder MEthods
-    List<Photo> findByCustomerId(String customerId);
+    // Us Finder MEthods
+    List<Photo> findByUserId(String userId);
 
 
 }

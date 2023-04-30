@@ -20,9 +20,9 @@ public interface PhotoService {
 
     Photo get(String photoId);
 
-    // For custom methods
+    // For us methods
 
-    List<Photo> getPhotosByCustomerId(String customerId);
+    List<Photo> getPhotosByUserId(String userId);
 
 
 }
