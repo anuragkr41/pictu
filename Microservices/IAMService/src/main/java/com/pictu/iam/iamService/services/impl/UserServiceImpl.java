@@ -2,12 +2,17 @@ package com.pictu.iam.iamService.services.impl;
 
 import com.pictu.core.exceptions.ResourceNotFoundException;
 import com.pictu.core.utilities.IdGeneratorString;
+import com.pictu.iam.iamService.entities.Photo;
 import com.pictu.iam.iamService.entities.User;
 import com.pictu.iam.iamService.repositories.UserRepository;
 import com.pictu.iam.iamService.services.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,6 +21,11 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
     public User saveUser(User user) {
@@ -32,8 +42,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getSingleUser(String userId) {
-        return userRepository.findById(userId)
+
+        User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + userId));
+
+        //Get Photos of the above user from Photo Service
+        ArrayList<Photo> photosOfUser = restTemplate.getForObject("http://localhost:8082/photos/user/"+ user.getUserId(), ArrayList.class);
+
+        user.setPhotos(photosOfUser);
+        //logger.info("{}", forObject);
+        return user;
+
+
+
+
     }
 }
 
