@@ -18,7 +18,7 @@ public interface PhotoService {
 
     //Get Single
 
-    Photo get(String photoId);
+    Photo getPhoto(String photoId);
 
     // For us methods
 

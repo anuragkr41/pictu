@@ -1,0 +1,16 @@
+package com.pictu.iam.iamService.externalServices;
+
+import com.pictu.iam.iamService.entities.Photo;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
+
+@FeignClient(name = "PHOTO-SERVICE")
+public interface PhotoService {
+    @GetMapping("/photos/{photoId}")
+    Photo getPhoto(@PathVariable String photoId);
+    @GetMapping("/photos/user/{userId}")
+    List<Photo> getPhotosByUserId(@PathVariable String userId);
+}

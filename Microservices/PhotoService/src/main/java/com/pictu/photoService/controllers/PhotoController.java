@@ -31,4 +31,9 @@ public class PhotoController {
     public ResponseEntity<List<Photo>> getAllPhotosByUserId(@PathVariable String userId){
         return ResponseEntity.ok(photoService.getPhotosByUserId(userId));
     }
+
+    @GetMapping("/{photoId}")
+    public ResponseEntity<Photo> getSinglePhoto(@PathVariable String photoId){
+        return ResponseEntity.ok(photoService.getPhoto(photoId));
+    }
 }

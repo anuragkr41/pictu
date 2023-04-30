@@ -11,9 +11,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Photo {
     private String photoId;
-    private String CustomerId;
+    //private String userId;
     private String name;
     private String location;
+    private String about;
 
 
 }
