@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + userId));
 
         //Get Photos of the above user from Photo Service
-        ArrayList<Photo> photosOfUser = restTemplate.getForObject("http://localhost:8082/photos/user/"+ user.getUserId(), ArrayList.class);
+        ArrayList<Photo> photosOfUser = restTemplate.getForObject("http://PHOTO-SERVICE/photos/user/"+ user.getUserId(), ArrayList.class);
 
         user.setPhotos(photosOfUser);
         //logger.info("{}", forObject);
