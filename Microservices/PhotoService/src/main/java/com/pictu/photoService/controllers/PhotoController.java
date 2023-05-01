@@ -1,5 +1,6 @@
 package com.pictu.photoService.controllers;
 
+import com.pictu.core.payloads.ApiResponse;
 import com.pictu.photoService.entities.Photo;
 import com.pictu.photoService.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/photos")
@@ -19,7 +19,7 @@ public class PhotoController {
 
     @PostMapping
     public ResponseEntity<Photo> create (@RequestBody Photo photo){
-        return ResponseEntity.status(HttpStatus.CREATED).body(photoService.create(photo));
+        return ResponseEntity.status(HttpStatus.CREATED).body(photoService.createPhoto(photo));
     }
 
     @GetMapping
@@ -35,5 +35,12 @@ public class PhotoController {
     @GetMapping("/{photoId}")
     public ResponseEntity<Photo> getSinglePhoto(@PathVariable String photoId){
         return ResponseEntity.ok(photoService.getPhoto(photoId));
+    }
+
+    @DeleteMapping("/{photoId}")
+    public ApiResponse deletePhoto(@PathVariable String photoId){
+        this.photoService.deletePhoto(photoId);
+        return new ApiResponse("Photo Deleted Successfully", true);
+
     }
 }

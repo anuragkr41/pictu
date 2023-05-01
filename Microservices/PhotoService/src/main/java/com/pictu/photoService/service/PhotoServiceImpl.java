@@ -12,7 +12,7 @@ public class PhotoServiceImpl  implements  PhotoService{
     @Autowired
     private PhotoRepository photoRepository;
     @Override
-    public Photo create(Photo photo) {
+    public Photo createPhoto(Photo photo) {
         photo.setPhotoId(IdGeneratorString.photoIDGenerator());
         return photoRepository.save(photo);
     }
@@ -28,5 +28,11 @@ public class PhotoServiceImpl  implements  PhotoService{
     @Override
     public List<Photo> getPhotosByUserId(String userId) {
         return photoRepository.findByUserId(userId);
+    }
+
+    @Override
+    public void deletePhoto(String photoId) {
+        Photo photo = this.photoRepository.findById(photoId).orElseThrow(() -> new ResourceNotFoundException("Photo Not found"));
+        photoRepository.delete(photo);
     }
 }

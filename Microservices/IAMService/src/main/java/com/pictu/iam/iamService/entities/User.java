@@ -16,7 +16,6 @@ import java.util.List;
 @Entity
 public class User extends AuditableEntity {
     @Id
-    @Column(name = "user_Id")
     private String userId;
     private String name;
     private String email;

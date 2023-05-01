@@ -6,12 +6,8 @@ import com.pictu.iam.iamService.entities.User;
 import com.pictu.iam.iamService.externalServices.PhotoService;
 import com.pictu.iam.iamService.repositories.UserRepository;
 import com.pictu.iam.iamService.services.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-import java.util.ArrayList;
 import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
@@ -20,13 +16,10 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Autowired
-    private RestTemplate restTemplate;
-
-    @Autowired
     private PhotoService photoService;
 
 
-    private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    //private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
     public User saveUser(User user) {
@@ -45,7 +38,7 @@ public class UserServiceImpl implements UserService {
         //Get Photos of the above user from Photo Service
         //ArrayList<Photo> photosOfUser = restTemplate.getForObject("http://PHOTO-SERVICE/photos/user/"+ user.getUserId(), ArrayList.class);
 
-        //Let us try fetching the photos Of the user using the fiegn client.
+        //Let us try fetching the photos Of the user using the feign client.
 
         List<Photo> photos = photoService.getPhotosByUserId(user.getUserId());
         user.setPhotos(photos);

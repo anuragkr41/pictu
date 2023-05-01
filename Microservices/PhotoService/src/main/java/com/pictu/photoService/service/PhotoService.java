@@ -9,7 +9,7 @@ public interface PhotoService {
 
     //Create
 
-    Photo create (Photo photo);
+    Photo createPhoto (Photo photo);
 
 
     //GetAll
@@ -23,6 +23,10 @@ public interface PhotoService {
     // For us methods
 
     List<Photo> getPhotosByUserId(String userId);
+
+    //For Delete
+
+    void deletePhoto(String photoId);
 
 
 }

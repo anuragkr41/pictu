@@ -9,8 +9,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
     @Autowired
-    private UserService userService;
+    public UserService userService;
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user){
         User savedUser = userService.saveUser(user);
