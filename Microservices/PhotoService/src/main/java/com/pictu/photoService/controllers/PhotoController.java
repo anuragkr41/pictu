@@ -35,12 +35,14 @@ public class PhotoController {
     @GetMapping("/{photoId}")
     public ResponseEntity<Photo> getSinglePhoto(@PathVariable String photoId){
         return ResponseEntity.ok(photoService.getPhoto(photoId));
+
     }
 
     @DeleteMapping("/{photoId}")
     public ApiResponse deletePhoto(@PathVariable String photoId){
         this.photoService.deletePhoto(photoId);
         return new ApiResponse("Photo Deleted Successfully", true);
+
 
     }
 }
