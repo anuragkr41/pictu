@@ -1,9 +1,6 @@
 package com.pictu.iam.iamService.entities;
 import com.pictu.core.payloads.AuditableEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -14,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 public class User extends AuditableEntity {
     @Id
     private String userId;
