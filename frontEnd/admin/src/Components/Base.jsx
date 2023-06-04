@@ -16,9 +16,9 @@ const Base = ({ title = "Welcome to Pictu", children }) => {
 						<CustomNavbar />
 						{children}
 					</ContentComponent>
+					<CustomFooter />
 				</ContentWrapperComponent>
 			</WrapperComponent>
-			<CustomFooter />
 		</div>
 	);
 };
