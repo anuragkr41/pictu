@@ -11,6 +11,7 @@ import java.util.List;
 public class PhotoServiceImpl  implements  PhotoService{
     @Autowired
     private PhotoRepository photoRepository;
+    
     @Override
     public Photo createPhoto(Photo photo) {
         photo.setPhotoId(IdGeneratorString.photoIDGenerator());

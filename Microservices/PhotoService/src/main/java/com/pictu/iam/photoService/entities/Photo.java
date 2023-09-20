@@ -5,15 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table
 public class Photo extends AuditableEntity {
@@ -24,9 +27,9 @@ public class Photo extends AuditableEntity {
     private String location;
     private String about;
 
-    //To be changed later
-    //Try again //as //another //anotherq
-    //One more
+    
+    
+
 
 
 }
