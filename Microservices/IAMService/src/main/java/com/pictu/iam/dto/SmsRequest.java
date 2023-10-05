@@ -1,7 +1,6 @@
-package com.pictu.iam.core.payloads;
+package com.pictu.iam.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,10 +9,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ApiResponse {
-    
-	private String message;
-    private Boolean isSuccess;
-	
-    
+public class SmsRequest {
+	private String apiKey;
+    private String phone;
+    private String message;
+
 }
